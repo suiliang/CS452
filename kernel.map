@@ -1,0 +1,269 @@
+Archive member included because of file (symbol)
+
+../lib/libbwio.a(bwio.o)      serialserver.o (c2x)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                              serialserver.o (__udivsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                              serialserver.o (__umodsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                              /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o) (__div0)
+
+Allocating common symbols
+Common symbol       size              file
+
+trackSize           0x4               sensorsTask.o
+trackData           0x1b00            sensorsTask.o
+switchTable         0x58              sensorsTask.o
+distances           0x14400           sensorsTask.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x0000000000218000 0x0000000002000000
+rom              0x0000000060000000 0x0000000000800000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000218000     0xc474
+ *(.text)
+ .text          0x0000000000218000       0xf4 syscall.o
+                0x0000000000218098                Send
+                0x00000000002180a8                IRQ_Handler
+                0x0000000000218090                MyParentTid
+                0x0000000000218088                Pass
+                0x0000000000218084                Create
+                0x000000000021802c                SWI_Handler
+                0x00000000002180a4                AwaitEvent
+                0x0000000000218000                Dispatch_First
+                0x000000000021809c                Receive
+                0x00000000002180a0                Reply
+                0x0000000000218094                MyTid
+                0x000000000021808c                Exit
+                0x0000000000218018                Dispatch
+ .text          0x00000000002180f4      0x1bc nameserver.o
+                0x00000000002180f4                WhoIs
+                0x000000000021818c                nameServer
+                0x0000000000218140                RegisterAs
+ .text          0x00000000002182b0      0x2cc clockserver.o
+                0x00000000002182b0                clocknotifier
+                0x00000000002182f8                start_clock
+                0x0000000000218380                clockserver
+                0x0000000000218334                Delay
+                0x000000000021830c                Time
+ .text          0x000000000021857c      0xd70 serialserver.o
+                0x0000000000218f00                putw
+                0x0000000000218eb4                putstr
+                0x0000000000219130                i2a
+                0x000000000021914c                format
+                0x0000000000218de4                getc
+                0x0000000000218ce0                init_uart
+                0x00000000002187a8                COM1getc
+                0x0000000000218ca4                setfifo
+                0x0000000000218e2c                putx
+                0x0000000000218b3c                COM2getc
+                0x00000000002185c8                COM1getnotify
+                0x0000000000218618                COM1putc
+                0x0000000000219054                ui2a
+                0x000000000021857c                COM1putnotify
+                0x0000000000218ffc                a2i
+                0x0000000000218910                COM2putnotify
+                0x0000000000218fbc                a2d
+                0x0000000000218d98                putc
+                0x000000000021895c                COM2getnotify
+                0x00000000002192cc                kprintf
+                0x0000000000218e70                putr
+                0x00000000002189ac                COM2putc
+ .text          0x00000000002192ec     0x1a48 kernel.o
+                0x000000000021944c                init_kernel
+                0x0000000000219360                enable_SWI
+                0x0000000000219530                C_IRQ_Handler
+                0x000000000021952c                meatspin
+                0x00000000002192ec                init_schedule
+                0x000000000021938c                disable_IRQ
+                0x000000000021a8d0                main
+                0x0000000000219c5c                kernel
+                0x00000000002193ac                enable_IRQ
+ .text          0x000000000021ad34      0x1d4 util.o
+                0x000000000021ad34                stringtoint
+                0x000000000021add0                locationtoint
+                0x000000000021ae64                intolocation
+                0x000000000021ad88                strcmp
+                0x000000000021aefc                min
+ .text          0x000000000021af08     0x750c track_data.o
+                0x000000000021b0a0                init_distance
+                0x000000000021b258                init_trackb
+                0x000000000021e9e4                init_tracka
+                0x000000000021af08                pointertoint
+                0x000000000021af58                it_distance
+ .text          0x0000000000222414      0x364 commandLine.o
+                0x0000000000222468                commandLine
+                0x0000000000222414                getWord
+ .text          0x0000000000222778      0x3b0 conductorServer.o
+                0x0000000000222778                conductorServer
+ .text          0x0000000000222b28      0x308 trainController.o
+                0x0000000000222b64                pathSet
+                0x0000000000222c28                trainController
+                0x0000000000222b28                trainNotifier
+ .text          0x0000000000222e30      0x1dc sensorServer.o
+                0x0000000000223008                reservationServer
+                0x0000000000222e30                sensorServer
+ .text          0x000000000022300c      0x34c sensorsTask.o
+                0x0000000000223020                crvSwitch
+                0x0000000000223090                init_switch
+                0x00000000002232e8                strSwitch
+                0x000000000022300c                switchTableInd
+                0x00000000002230d8                sensorsTask
+ .text          0x0000000000223358      0x244 userprog.o
+                0x0000000000223358                first
+ .text          0x000000000022359c      0xc54 ../lib/libbwio.a(bwio.o)
+                0x0000000000223914                bwputr
+                0x0000000000223e80                bwi2a
+                0x000000000022359c                bwsetfifo
+                0x0000000000223770                bwputc
+                0x0000000000223bd0                bwa2d
+                0x0000000000223664                bwsetspeed
+                0x0000000000223834                c2x
+                0x0000000000223c78                bwa2i
+                0x0000000000223b18                bwgetc
+                0x0000000000223d3c                bwui2a
+                0x0000000000223ee4                bwformat
+                0x0000000000223a10                bwputw
+                0x00000000002241b8                bwprintf
+                0x0000000000223894                bwputx
+                0x0000000000223994                bwputstr
+ .text          0x00000000002241f0      0x110 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                0x00000000002241f0                __udivsi3
+                0x00000000002242e8                __aeabi_uidivmod
+ .text          0x0000000000224300       0xcc /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                0x0000000000224300                __umodsi3
+ .text          0x00000000002243cc        0x4 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                0x00000000002243cc                __aeabi_ldiv0
+                0x00000000002243cc                __div0
+                0x00000000002243cc                __aeabi_idiv0
+ *(.got)
+ .got           0x00000000002243d0       0x98 nameserver.o
+ *(.got.plt)
+ .got.plt       0x0000000000224468        0xc nameserver.o
+                0x0000000000224468                _GLOBAL_OFFSET_TABLE_
+ *(.rodata)
+ *(.glue_7)
+ *(.glue_7t)
+
+.data           0x0000000000224474        0x8
+                0x0000000000224474                _DataStart = .
+ *(.data)
+ .data          0x0000000000224474        0x4 nameserver.o
+ .data          0x0000000000224478        0x4 clockserver.o
+                0x000000000022447c                _DataEnd = .
+
+.rodata.str1.4  0x000000000022447c      0x79c
+                0x000000000022447c                _Rodata14Start = .
+ *(.rodata.str1.4)
+ .rodata.str1.4
+                0x000000000022447c       0x3f nameserver.o
+                                         0x40 (size before relaxing)
+ *fill*         0x00000000002244bb        0x1 00
+ .rodata.str1.4
+                0x00000000002244bc       0x52 kernel.o
+                                         0x54 (size before relaxing)
+ *fill*         0x000000000022450e        0x2 00
+ .rodata.str1.4
+                0x0000000000224510       0x63 util.o
+                                         0x64 (size before relaxing)
+ *fill*         0x0000000000224573        0x1 00
+ .rodata.str1.4
+                0x0000000000224574      0x2d4 track_data.o
+ .rodata.str1.4
+                0x0000000000224848       0xb9 commandLine.o
+                                         0xbc (size before relaxing)
+ *fill*         0x0000000000224901        0x3 00
+ .rodata.str1.4
+                0x0000000000224904      0x197 conductorServer.o
+                                        0x198 (size before relaxing)
+ *fill*         0x0000000000224a9b        0x1 00
+ .rodata.str1.4
+                0x0000000000224a9c       0x39 trainController.o
+                                         0x3c (size before relaxing)
+ *fill*         0x0000000000224ad5        0x3 00
+ .rodata.str1.4
+                0x0000000000224ad8       0x62 sensorServer.o
+                                         0x64 (size before relaxing)
+ *fill*         0x0000000000224b3a        0x2 00
+ .rodata.str1.4
+                0x0000000000224b3c       0x5a sensorsTask.o
+                                         0x5c (size before relaxing)
+ *fill*         0x0000000000224b96        0x2 00
+ .rodata.str1.4
+                0x0000000000224b98       0x80 userprog.o
+                0x0000000000224c18                _Rodata14End = .
+
+.bss            0x0000000000224c18    0x17ef8
+                0x0000000000224c18                _BssStart = .
+ *(.bss)
+ .bss           0x0000000000224c18        0x4 clockserver.o
+ .bss           0x0000000000224c1c       0x10 serialserver.o
+ .bss           0x0000000000224c2c     0x1f88 kernel.o
+                0x0000000000226bb4                _BssEnd = .
+ COMMON         0x0000000000226bb4    0x15f5c sensorsTask.o
+                0x0000000000226bb4                trackSize
+                0x0000000000226bb8                trackData
+                0x00000000002286b8                switchTable
+                0x0000000000228710                distances
+
+.rel.dyn
+LOAD syscall.o
+LOAD nameserver.o
+LOAD clockserver.o
+LOAD serialserver.o
+LOAD kernel.o
+LOAD util.o
+LOAD track_data.o
+LOAD commandLine.o
+LOAD conductorServer.o
+LOAD trainController.o
+LOAD sensorServer.o
+LOAD sensorsTask.o
+LOAD userprog.o
+LOAD ../lib/libbwio.a
+LOAD /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a
+OUTPUT(kernel.elf elf32-littlearm)
+
+.comment        0x0000000000000000       0xea
+ .comment       0x0000000000000000       0x12 nameserver.o
+ .comment       0x0000000000000012       0x12 clockserver.o
+ .comment       0x0000000000000024       0x12 serialserver.o
+ .comment       0x0000000000000036       0x12 kernel.o
+ .comment       0x0000000000000048       0x12 util.o
+ .comment       0x000000000000005a       0x12 track_data.o
+ .comment       0x000000000000006c       0x12 commandLine.o
+ .comment       0x000000000000007e       0x12 conductorServer.o
+ .comment       0x0000000000000090       0x12 trainController.o
+ .comment       0x00000000000000a2       0x12 sensorServer.o
+ .comment       0x00000000000000b4       0x12 sensorsTask.o
+ .comment       0x00000000000000c6       0x12 userprog.o
+ .comment       0x00000000000000d8       0x12 ../lib/libbwio.a(bwio.o)
+
+.debug_line     0x0000000000000000      0x14f
+ .debug_line    0x0000000000000000       0x86 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000086       0x6f /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000000000000f5       0x5a /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x0000000000000000      0x153
+ .debug_info    0x0000000000000000       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000000071       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_info    0x00000000000000e2       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000       0x3c
+ .debug_abbrev  0x0000000000000000       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000014       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000000000000028       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_aranges  0x0000000000000000       0x60
+ .debug_aranges
+                0x0000000000000000       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
